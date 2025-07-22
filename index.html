@@ -2,9 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chúc mừng sinh nhật!</title>
-
+  <title>Chúc mừng sinh nhật 🎉</title>
   <style>
     body {
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -25,45 +23,153 @@
       100% { color: #69f0ae; }
     }
 
-    .marquee {
-      font-size: 30px;
-      white-space: nowrap;
-      overflow: hidden;
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-    }
-
-    .marquee span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 10s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    img {
-      width: 300px;
-      border-radius: 20px;
-      margin-top: 20px;
+    /* Hộp quà */
+    .gift-box {
+      width: 200px;
+      height: 200px;
+      background: red;
+      margin: 50px auto;
+      position: relative;
+      border-radius: 10px;
+      cursor: pointer;
       box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    .gift-box::before {
+      content: '';
+      width: 200px;
+      height: 20px;
+      background: gold;
+      position: absolute;
+      top: 90px;
+      left: 0;
+    }
+
+    .gift-box::after {
+      content: '';
+      width: 20px;
+      height: 200px;
+      background: gold;
+      position: absolute;
+      top: 0;
+      left: 90px;
+    }
+
+    .gift-lid {
+      width: 200px;
+      height: 40px;
+      background: red;
+      position: absolute;
+      top: -40px;
+      left: 0;
+      transition: 1s ease;
+      transform-origin: bottom center;
+    }
+
+    .open .gift-lid {
+      transform: rotateX(120deg);
+    }
+
+    /* Slideshow */
+    .slideshow {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .slideshow img {
+      width: 400px;
+      display: none;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    /* Pháo hoa */
+    .firework {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: yellow;
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(5); opacity: 0; }
     }
   </style>
 </head>
 <body>
 
   <h1>🎉 Chúc mừng sinh nhật 🎉</h1>
-  <h2>Chúc bạn luôn vui vẻ & hạnh phúc! 💖</h2>
+  <p>Nhấn vào hộp quà để mở bất ngờ nhé! 🎁</p>
 
-  <!-- Thay link ảnh bằng ảnh bạn muốn -->
-  <img src="D:\mr.hieu\code\anh\z6828664311558_fd791cf368aff112c29f3fe151b9083f" alt="Happy Birthday">
-
-  <div class="marquee">
-    <span>🎂 Chúc bạn một ngày sinh nhật thật đặc biệt, đầy niềm vui & yêu thương! 🎁 🎉</span>
+  <!-- Hộp quà -->
+  <div class="gift-box" id="giftBox">
+    <div class="gift-lid"></div>
   </div>
+
+  <!-- Slideshow ảnh -->
+  <div class="slideshow" id="slideshow">
+    <<img src="https://sf-static.upanhlaylink.com/img/image_2025072255597e3278da32b5a358ab50650f16f4.jpg" alt="z6828664311558_fd791cf368aff112c29f3fe151b9083f.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_20250722e99a58e017101e9524078d47971097ee.jpg" alt="z6828664322029_f0d34e4cf530a010229d86a39ae69526.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_20250722aae79eb379c29255113773a1007d0641.jpg" alt="z6828664325911_7b5b6492908c8ac2d1d50dbd5777f661.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_2025072264d7b4dafbaee401b79feeffd1181886.jpg" alt="z6828664339941_25ed41a6b62a1602d9ce7fafcf562713.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_202507220ae14066e4dfdfe973224fad70fb7cf8.jpg" alt="z6828664346195_699476bc33cfe54bb1b42239e9c0761f.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_20250722be79819ab8de0b15ac9ffb203f74c677.jpg" alt="z6828664349741_fdee2c29faf9c64b3bb0600bdb3d91cd.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_20250722c0f2823bb7d766c81199c078f467ed7d.jpg" alt="z6828664359827_79bdd52a5ba38cbe76ee8ffafde3e9f8.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_202507224b779b244a8e9f8a3ff8655247a577e1.jpg" alt="z6828664364396_6b28c21784b75132dc0805633069241c.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_20250722e4d6e93ff762456b06b35ccae5369881.jpg" alt="z6828664375258_c60ff920ebbbf35852980d5ddc87c943.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_202507225cc7189ce3fac674b42d81dd4f69ac52.jpg" alt="z6828664389227_af991f6306107c06971f49cc3256701e.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_20250722a1c526564622e11dceb7264f46c83fb4.jpg" alt="z6828664424123_a312464d19f8f318ce550f4290cc61b7.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_202507222a4233cb4aa3708252e609900992df47.jpg" alt="z6828664437681_eed9f31e7b8708995f9b7caa5a5b8336.jpg">">
+    <img src="<img src="https://sf-static.upanhlaylink.com/img/image_20250722a27f1e76041f72a4b8e2fabe31e23072.jpg" alt="z6828664403767_b99b904e0a4bfb00644e14f160c70504.jpg">">
+  </div>
+
+  <!-- Nhạc nền -->
+  <audio id="bgMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+  <script>
+    const giftBox = document.getElementById("giftBox");
+    const slideshow = document.getElementById("slideshow");
+    const slides = slideshow.querySelectorAll("img");
+    const bgMusic = document.getElementById("bgMusic");
+    let index = 0;
+
+    function startSlideshow() {
+      slideshow.style.display = "block";
+      slides[index].style.display = "block";
+      setInterval(() => {slides[index].style.display = "none";
+        index = (index + 1) % slides.length;
+        slides[index].style.display = "block";
+      }, 3000);
+    }
+
+    function createFirework(x, y) {
+      for (let i = 0; i < 20; i++) {
+        const f = document.createElement("div");
+        f.classList.add("firework");
+        document.body.appendChild(f);
+        f.style.left = x + "px";
+        f.style.top = y + "px";
+        f.style.background = `hsl(${Math.random()*360},100%,50%)`;
+        f.style.transform = `translate(${Math.random()*200-100}px, ${Math.random()*200-100}px)`;
+        setTimeout(() => f.remove(), 1000);
+      }
+    }
+
+    giftBox.addEventListener("click", (e) => {
+      giftBox.classList.add("open");
+      bgMusic.play(); // phát nhạc
+      // Tạo pháo hoa tại vị trí click
+      createFirework(window.innerWidth/2, window.innerHeight/2);
+
+      setTimeout(() => {
+        giftBox.style.display = "none"; 
+        startSlideshow();
+      }, 1500);
+    });
+  </script>
 
 </body>
 </html>
